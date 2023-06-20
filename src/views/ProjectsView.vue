@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       projects: [
-        {"title": "","language":"", "description":"", "url": ""}
+        {"name": "","language":"", "description":"", "url": ""}
       ],
       vue: false,
       python: false,
@@ -68,7 +68,7 @@ export default {
   },
 
   methods: {
-    getImageSource(language) {
+    getImageSource(language: string) {
       if (language === "Vue") {
         this.vue = true;
         return "";
