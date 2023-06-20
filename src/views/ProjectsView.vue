@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="container invis"></div>
-      <div class="container" v-for="project in projects" :key="project.title">
+      <div class="container" v-for="project in projects" :key="project.name">
         <div class="containertitle">
           {{ getImageSource(project.language) }}
           {{ project.name.replace(/-/g, " ") }}
