@@ -36,7 +36,7 @@
         </div>
         <div class="description">{{ project.description }}</div>
         <div class="container-bottom">
-          <a :href="project.url" class="github">
+          <a :href="project.html_url" class="github" target="_blank">
             Github
             <img
               src="@/assets/arrow-up-right.svg"
@@ -70,9 +70,11 @@ export default {
   methods: {
     getImageSource(language: string) {
       if (language === "Vue") {
+        this.python = false;
         this.vue = true;
         return "";
       } else if (language === "Python") {
+        this.vue = false;
         this.python = true;
         return "";
       } else {
