@@ -9,7 +9,7 @@
       </div>
       <div class="container invis"></div>
       <div class="container" v-for="project in projects" :key="project.name">
-        <div class="containertitle"> {{ project.language }}
+        <div class="containertitle">
           <img
             v-if="isPython(project.language)"
             src="@/assets/python.svg"
