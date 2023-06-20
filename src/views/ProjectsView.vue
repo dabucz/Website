@@ -9,7 +9,7 @@
       </div>
       <div class="container invis"></div>
       <div class="container" v-for="project in projects" :key="project.name">
-        <div class="containertitle">
+        <div class="containertitle"> {{ project.language }}
           <img
             v-if="isPython(project.language)"
             src="@/assets/python.svg"
@@ -19,12 +19,6 @@
           <img
             v-else-if="isVue(project.language)"
             src="@/assets/vue.svg"
-            class="langIcon"
-            target="_blank"
-          />
-          <img
-            v-else
-            src=""
             class="langIcon"
             target="_blank"
           />
@@ -65,14 +59,9 @@ export default {
 
   methods: {
     isPython(language: string) {
-      if (language === "Python") {
-        return true;
-      } else { return false; }
+    if (language === "Python") { return true; } else { return false; }
     },
-    isVue(language: string) {
-    if (language === "Vue") {
-      return true;
-    } else { return false; }
+    isVue(language: string) { if (language === "Vue") { return true; } else { return false; }
     },
     async getData() {
       try {
