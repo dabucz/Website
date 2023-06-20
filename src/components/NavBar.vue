@@ -7,7 +7,6 @@
           v-for="route in routes"
           :key="route.path"
           :to="route.path"
-          @click="closeMenu"
         >
           {{ route.name }}
         </RouterLink>
@@ -18,7 +17,6 @@
         v-for="route in routes"
         :key="route.path"
         :to="route.path"
-        @click="closeMenu"
       >
         {{ route.name }}
       </RouterLink>
@@ -40,6 +38,7 @@ const routes = router
   .filter((route) => !excludedRoutes.includes(route.name));
 
 const isResponsive = ref(false);
+const isResponsive2 = ref(false);
 const isMenuOpen = ref(false);
 
 const toggleResponsive = () => {
