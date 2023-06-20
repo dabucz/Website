@@ -6,7 +6,13 @@
 </template>
 
 <style>
-.about {
+h1 {
+  font-size: 4rem;
+}
+.NotFound {
+  font-size: 1.5rem;
+  flex-direction: column;
+  margin: 0 auto;
   display: flex;
   place-items: center;
 }

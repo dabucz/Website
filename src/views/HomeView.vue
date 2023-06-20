@@ -28,7 +28,10 @@
 
 <style>
 .Homepage {
-  margin: 16rem auto;
+  margin-top: 11rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -100,16 +100,17 @@ export default {
   width: 25px;
   height: 25px;
 }
-.projectsmain {
-  margin: 0 30rem;
+.projectsmain { 
+  margin: 0 10rem;
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
 a.github {
   color: var(--color-text);
+  margin: 0 auto;
+  display: flex;
+  place-items: center;
   transition: 0.3s ease;
   transform: translateY(0px);
 }
@@ -190,8 +191,21 @@ a.github:hover {
 }
 @media (max-width: 1600px) {
   .projectsmain {
-    margin: 0 1rem;
+    margin: 0 4rem;
   }
+}
+
+@media (max-width: 1087px) {
+  .projectsmain {
+    margin: 0 2rem;
+  }
+}
+@media (max-width: 1025px) {
+  .projectsmain {
+    margin: 0 0;
+  }
+  .invis{display:none;}
+  
 }
 @media (max-width: 768px) {
   .projectsmain {
