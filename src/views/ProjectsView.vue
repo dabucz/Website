@@ -58,10 +58,10 @@ export default {
   },
 
   methods: {
-    isPython(language) {
+    isPython(language: string) {
     if (language === "Python") { return true; } else { return false; }
     },
-    isVue(language) { if (language === "Vue") { return true; } else { return false; }
+    isVue(language: string) { if (language === "Vue") { return true; } else { return false; }
     },
     async getData() {
       try {
