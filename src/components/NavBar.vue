@@ -13,11 +13,7 @@
       </div>
     </div>
     <div class="menu" :class="{ responsive: isResponsive2 }">
-      <RouterLink
-        v-for="route in routes"
-        :key="route.path"
-        :to="route.path"
-      >
+      <RouterLink v-for="route in routes" :key="route.path" :to="route.path ? route.path : ''">
         {{ route.name }}
       </RouterLink>
       <button href="javascript:void(0);" class="icon" @click="toggleResponsive">
