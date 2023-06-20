@@ -31,7 +31,12 @@ import router from "./../router/";
 const excludedRoutes = ["NotFound"];
 const routes = router
   .getRoutes()
-  .filter((route) => !excludedRoutes.includes(route.name));
+  .filter((route) => !excludedRoutes.includes(route.name))
+  .map((route) => ({
+    ...route,
+    path: route.path ?? '',
+  }));
+
 
 const isResponsive = ref(false);
 const isResponsive2 = ref(false);
