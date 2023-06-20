@@ -10,29 +10,25 @@
       <div class="container invis"></div>
       <div class="container" v-for="project in projects" :key="project.name">
         <div class="containertitle">
-          {{ getImageSource(project.language) }}
-          {{ project.name.replace(/-/g, " ") }}
           <img
-            v-if="python"
+            v-if="isPython(project.language)"
             src="@/assets/python.svg"
-            width="15"
-            height="15"
+            class="langIcon"
             target="_blank"
           />
           <img
-            v-else-if="vue"
+            v-else-if="isVue(project.language)"
             src="@/assets/vue.svg"
-            width="15"
-            height="15"
+            class="langIcon"
             target="_blank"
           />
           <img
             v-else
             src=""
-            width="15"
-            height="15"
+            class="langIcon"
             target="_blank"
           />
+          {{ project.name.replace(/-/g, " ") }}
         </div>
         <div class="description">{{ project.description }}</div>
         <div class="container-bottom">
@@ -68,18 +64,15 @@ export default {
   },
 
   methods: {
-    getImageSource(language: string) {
-      if (language === "Vue") {
-        this.python = false;
-        this.vue = true;
-        return "";
-      } else if (language === "Python") {
-        this.vue = false;
-        this.python = true;
-        return "";
-      } else {
-        return "";
-      }
+    isPython(language: string) {
+      if (language === "Python") {
+        return true;
+      } else { return false; }
+    },
+    isVue(language: string) {
+    if (language === "Vue") {
+      return true;
+    } else { return false; }
     },
     async getData() {
       try {
@@ -103,6 +96,10 @@ export default {
 </script>
 
 <style>
+.langIcon {
+  width: 25px;
+  height: 25px;
+}
 .projectsmain {
   margin: 0 30rem;
   display: flex;
