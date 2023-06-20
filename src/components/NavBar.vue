@@ -13,7 +13,11 @@
       </div>
     </div>
     <div class="menu" :class="{ responsive: isResponsive2 }">
-      <RouterLink v-for="route in routes" :key="route.path" :to="route.path || undefined">
+      <RouterLink
+        v-for="route in routes"
+        :key="route.path"
+        :to="route.path"
+      >
         {{ route.name }}
       </RouterLink>
       <button href="javascript:void(0);" class="icon" @click="toggleResponsive">
@@ -31,12 +35,7 @@ import router from "./../router/";
 const excludedRoutes = ["NotFound"];
 const routes = router
   .getRoutes()
-  .filter((route) => !excludedRoutes.includes(route.name))
-  .map((route) => ({
-    ...route,
-    path: route.path ?? '',
-  }));
-
+  .filter((route) => !excludedRoutes.includes(route.name));
 
 const isResponsive = ref(false);
 const isResponsive2 = ref(false);
