@@ -55,7 +55,9 @@
 export default {
   data() {
     return {
-      projects: [],
+      projects: [
+        {"title": "","language":"", "description":"", "url": ""}
+      ],
       vue: false,
       python: false,
     };
