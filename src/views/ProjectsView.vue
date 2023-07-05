@@ -90,7 +90,7 @@ export default {
   height: 25px;
 }
 .projectsmain { 
-  margin: 0 10rem;
+  margin: 0 50rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,12 +150,12 @@ a.github:hover {
 
 .container {
   flex: 0 1 30%;
-  height: auto;
   margin: 1rem;
   background-color: rgb(19, 19, 19);
   border: 1px solid #2c2c2c;
   border-radius: 5px;
   text-align: left;
+  width: 5rem;
 }
 
 .nobg {

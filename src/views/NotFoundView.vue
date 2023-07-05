@@ -1,8 +1,8 @@
 <template>
-  <div class="NotFound">
+  <main class="NotFound">
     <h1>404</h1>
     Requested page not found
-  </div>
+  </main>
 </template>
 
 <style>
