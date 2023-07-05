@@ -5,7 +5,7 @@ var serveStatic = require('serve-static');
 app = express();
 app.use(serveStatic(__dirname + "/dist"));
 var port = process.env.PORT || 2024;
-var hostname = '127.0.0.1';
+var hostname = '0.0.0.0';
 
 app.listen(port, hostname, () => {
    console.log(`Server running at http://${hostname}:${port}/`);
