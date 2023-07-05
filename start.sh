@@ -1,2 +1,2 @@
 npm run build
-node server
+/usr/local/bin/node server
