@@ -1,9 +1,17 @@
-// server.js
 var express = require('express');
 var path = require('path');
 var serveStatic = require('serve-static');
+
 app = express();
-app.use(serveStatic(__dirname + "/dist"));
+
+// Serve static files from the "dist" directory
+app.use(serveStatic(path.join(__dirname, 'dist')));
+
+// Configure fallback route for Vue Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 var port = process.env.PORT || 2024;
 var hostname = '0.0.0.0';
 
