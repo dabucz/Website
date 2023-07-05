@@ -1,13 +1,11 @@
 <template>
   <main class="projectsmain">
     <div class="projects">
-      <div class="container invis"></div>
-      <div class="container noborder nobg centertext">
+      <div class="containerbig container noborder nobg centertext">
         <div class="containertitle">
           <h1 class="h1title">Projects</h1>
         </div>
       </div>
-      <div class="container invis"></div>
       <div class="container" v-for="project in projects" :key="project.name">
         <div class="containertitle">
           <img
@@ -26,7 +24,7 @@
         </div>
         <div class="description">{{ project.description }}</div>
         <div class="container-bottom">
-          <a :href="project.html_url" class="github" target="_blank">
+          <button :href="project.html_url" class="github" target="_blank">
             Github
             <img
               src="@/assets/arrow-up-right.svg"
@@ -34,7 +32,7 @@
               height="15"
               target="_blank"
             />
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -90,23 +88,41 @@ export default {
   height: 25px;
 }
 .projectsmain { 
-  margin: 0 50rem;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
-a.github {
+
+.github {
+  background-color: red;
   color: var(--color-text);
   margin: 0 auto;
   display: flex;
   place-items: center;
   transition: 0.3s ease;
   transform: translateY(0px);
+  margin-left: 1rem;
+  width: 8rem;
+  height: 2.5rem;
+  background-color: rgb(38, 38, 38);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: auto;
+  margin-bottom: 15px;
+
 }
 
-a.github:hover {
+.github:hover {
+  background-color: white;
   transition: 0.3s ease;
   transform: translateY(-2px);
+  transition: 0.3s ease;
+  background-color: rgb(61, 61, 61)
 }
 .h1title {
   font-size: 3rem;
@@ -120,23 +136,6 @@ a.github:hover {
   font-size: 30px;
   margin: 0.5rem 1rem;
 }
-
-.container-bottom {
-  margin-left: 1rem;
-  width: 8rem;
-  height: 2rem;
-  background-color: rgb(38, 38, 38);
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #fff;
-  text-decoration: none;
-  margin-top: auto;
-  margin-bottom: 15px;
-}
-
 .description {
   font-size: 16px;
   margin: 0.5rem 1rem;
@@ -149,13 +148,17 @@ a.github:hover {
 }
 
 .container {
-  flex: 0 1 30%;
+  flex: 0 1 25%;
   margin: 1rem;
   background-color: rgb(19, 19, 19);
   border: 1px solid #2c2c2c;
   border-radius: 5px;
   text-align: left;
   width: 5rem;
+}
+
+.containerbig {
+  flex: 0 1 90%;
 }
 
 .nobg {
@@ -175,20 +178,9 @@ a.github:hover {
 }
 
 .container::after {
-  content: "";
   flex: auto;
 }
-@media (max-width: 1600px) {
-  .projectsmain {
-    margin: 0 4rem;
-  }
-}
 
-@media (max-width: 1087px) {
-  .projectsmain {
-    margin: 0 2rem;
-  }
-}
 @media (max-width: 1025px) {
   .projectsmain {
     margin: 0 0;
@@ -198,7 +190,7 @@ a.github:hover {
 }
 @media (max-width: 768px) {
   .projectsmain {
-    margin: 0 1rem;
+    margin: 0 auto;
   }
 
   .h1title {
@@ -225,4 +217,5 @@ a.github:hover {
     margin: 0.5rem 0;
   }
 }
+
 </style>
