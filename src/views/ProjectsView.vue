@@ -7,6 +7,7 @@
         </div>
       </div>
       <div class="container" v-for="project in projects" :key="project.name">
+        <div class="container-top">
         <div class="containertitle">
           <img
             v-if="isPython(project.language)"
@@ -23,8 +24,9 @@
           {{ project.name.replace(/-/g, " ") }}
         </div>
         <div class="description">{{ project.description }}</div>
+        </div>
         <div class="container-bottom">
-          <button :href="project.html_url" class="github" target="_blank">
+          <a :href="project.html_url" class="github" target="_blank">
             Github
             <img
               src="@/assets/arrow-up-right.svg"
@@ -32,7 +34,7 @@
               height="15"
               target="_blank"
             />
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -56,6 +58,9 @@ export default {
   },
 
   methods: {
+    openGithub(url: string) {
+      window.location.href = url;
+    },
     isPython(language: string) {
     if (language === "Python") { return true; } else { return false; }
     },
@@ -92,15 +97,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .github {
-  background-color: red;
-  color: var(--color-text);
+  color: var(--color-text-2);
   margin: 0 auto;
   display: flex;
   place-items: center;
+  font-size: 1rem;
   transition: 0.3s ease;
   transform: translateY(0px);
   margin-left: 1rem;
@@ -121,7 +125,6 @@ export default {
   background-color: white;
   transition: 0.3s ease;
   transform: translateY(-2px);
-  transition: 0.3s ease;
   background-color: rgb(61, 61, 61)
 }
 .h1title {
@@ -139,6 +142,8 @@ export default {
 .description {
   font-size: 16px;
   margin: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  word-break: break-all;
 }
 
 .projects {
@@ -154,7 +159,10 @@ export default {
   border: 1px solid #2c2c2c;
   border-radius: 5px;
   text-align: left;
-  width: 5rem;
+  width: 10rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 }
 
 .containerbig {

@@ -31,6 +31,7 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+    --color-text-2: var(--vt-c-text-dark-1);
 }
 
 *,

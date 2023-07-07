@@ -1,7 +1,7 @@
 <template>
   <main class="Homepage">
     <div class="left">
-      <img @click="rickroll()" alt="Vue logo" class="logo" src="@/assets/pfp.svg" width="200" height="200"/>
+      <img alt="Vue logo" class="logo" src="@/assets/pfp.svg" width="200" height="200"/>
     </div>
     <div class="right">
       <h1 class="h1hometitle">dabu</h1>
@@ -25,16 +25,6 @@
     </div>
   </main>
 </template>
-
-<script lang="ts">
-export default {
-  methods: {
-    rickroll() {
-      window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
-    }
-  }
-}
-</script>
 
 <style>
 .Homepage {
