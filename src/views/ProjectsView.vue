@@ -21,6 +21,12 @@
             class="langIcon"
             target="_blank"
           />
+          <img
+            v-if="isReact(project.language)"
+            src="@/assets/react.svg"
+            class="langIcon"
+            target="_blank"
+          />
           {{ project.name.replace(/-/g, " ") }}
         </div>
         <div class="description">{{ project.description }}</div>
@@ -48,8 +54,6 @@ export default {
       projects: [
         {"name": "","language":"", "description":"", "html_url": ""}
       ],
-      vue: false,
-      python: false,
     };
   },
 
@@ -62,9 +66,13 @@ export default {
       window.location.href = url;
     },
     isPython(language: string) {
-    if (language === "Python") { return true; } else { return false; }
+      if (language === "Python") { return true; } else { return false; }
     },
-    isVue(language: string) { if (language === "Vue") { return true; } else { return false; }
+    isVue(language: string) {
+      if (language === "Vue") { return true; } else { return false; }
+    },
+    isReact(language: string) {
+      if (language === "React") { return true; } else { return false; }
     },
     async getData() {
       try {
